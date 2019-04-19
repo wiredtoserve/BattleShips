@@ -1,6 +1,8 @@
 # Task file that contains the classes
 # Should pass the complete class as String to main.py
 
+#import random
+
 class Player:
     """
     Contains three methods
@@ -22,45 +24,17 @@ class Player:
         3. get_name:   returns a string that is the name of the Player
 
     """
-    import random
-    from collections import defaultdict
-
-    def __init__(self):
-
-        self.player_battleground = [[0 for i in range(10)] for j in range(10)]
-        self.opponent_battleground = [[0 for i in range(10)] for j in range(10)]
-
-        self.ships_dd = Player.defaultdict(int)
-        self.status = []
 
     def setup_ships(self):
         '''
 
         :return: a 10x10 grid with the location of our ships
         '''
+        # Grid of rows and columns ranging from indices 0 to 9
         grid = [[0 for i in range(10)] for j in range(10)]
-
-        # ship numbers
-        ship = [i for i in range(1, 6)]
-
-        # randomly shuffle the ship list
-        Player.random.shuffle(ship)
-
-        for ship_number in ship:
-            control = True
-
-            while control:
-                # randomly select a point on the grid
-                ship_start_position = self.random_position()
-
-                if self.vacant(ship_start_position, ship_number, grid):
-                    for row in range(0, ship_number):
-                        # print(f'{ship_start_position} ship : {ship_number}')
-                        grid[ship_start_position[0] + row][ship_start_position[1]] = ship_number
-
-                    control = False
-
-        self.player_battleground = grid
+        for ship in range(1, 6):
+            for row in range(0, ship):
+                grid[row][ship] = ship
         return grid
 
     def take_turn(self, history):
@@ -76,28 +50,68 @@ class Player:
         :return: a list of tuple/s describing the shots or changed location
                 depending on the strategy
         '''
-        last_shot = history[-1]['incoming']
-        self.player_battleground = self.update_opponent_shots(self.player_battleground, last_shot)
+        return [(0, 0), (1, 1), (2, 2)]
 
-        # counting the number of ships left
-        self.ships_dd = Player.defaultdict(int)  # reset count everytime
-        # ships_dd = Player.defaultdict(int)
+    def get_name(self):
+        '''
 
-        for row in self.player_battleground:
-            for point in row:
-                self.ships_dd[point] += point
+        :return: string - name of the Player
+        '''
+        return "Syndicate_10"
 
-        self.status = self.ship_status(self.ships_dd)
 
-        # Count the number of ships remaining
-        number_of_ships = len(self.status)
+# This part of the code is just for demonstration only
 
-        # Take random shots
-        shots_list = [number for number in self.random_shots(number_of_ships)]
+class DummyPlayer:
+    """
 
-        # return [(0, 0), (1, 1), (2, 2)]
-        # return Player.setup_ships(self)
-        return shots_list
+    Dummy player for test purposes
+
+    """
+    import random
+
+    def setup_ships(self):
+        '''
+
+        :return: a 10x10 grid with the location of our ships
+        '''
+        grid = [[0 for i in range(10)] for j in range(10)]
+
+        # ship numbers
+        ship = [i for i in range(1, 6)]
+
+        # randomly shuffle the ship list
+        DummyPlayer.random.shuffle(ship)
+
+        for ship_number in ship:
+            control = True
+
+            while control:
+                # randomly select a point on the grid
+                ship_start_position = self.random_position()
+
+                if self.vacant(ship_start_position, ship_number, grid):
+                    for row in range(0, ship_number):
+                        grid[ship_start_position[0] + row][ship_start_position[1]] = ship_number
+
+                    control = False
+
+        return grid
+
+    def take_turn(self, history):
+        '''
+
+        :param history: records the game
+                        list that contains one entry per turn
+                        dict with 3 keys
+                            - 'shots' : list of shots made in the turn
+                            - 'hits' : an integer number of hits that your shots made
+                            - 'incoming' : opponents list of shots, [] if moved
+
+        :return: a list of tuple/s describing the shots or changed location
+                depending on the strategy
+        '''
+        return [(0, 0), (1, 1), (2, 2)]
 
     def get_name(self):
         '''
@@ -108,7 +122,7 @@ class Player:
 
     # function to select a point on the grid
     def random_position(self):
-        return [Player.random.randint(0, 9), Player.random.randint(0, 9)]
+        return [DummyPlayer.random.randint(0, 9), DummyPlayer.random.randint(0, 9)]
 
     # function to check if the position is vacant
     def vacant(self, pos, ship, grid):
@@ -116,25 +130,14 @@ class Player:
         if pos[0] + ship <= 10:
             for i in range(0, ship):
                 # checking if any other ship is already present
-                if grid[pos[0] + i][pos[1]] != 0:
+                if grid[i][pos[1]] != 0:
                     return False
             return True
         return False
 
-    def random_shots(self, num=5):
-        for x in range(0, num):
-            yield Player.random.randint(0, 9), Player.random.randint(0, 9)
 
-    def update_opponent_shots(self, grid, incoming_shots):
-        for x, y in incoming_shots:
-            grid[x][y] = 9
-        return grid
-
-    def ship_status(self, ships_dd):
-        status = []
-        for ship in ships_dd.keys():
-            # as long as the default dictionary has a key, the ship is breathing
-            if ship in [1, 2, 3, 4, 5]:
-                status.append((ship, ships_dd[ship] / (ship ** 2)))
-
-        return status
+p1 = DummyPlayer()
+print(p1.get_name())
+grid = p1.setup_ships()
+for i in grid:
+    print(i)
