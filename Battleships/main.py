@@ -18,6 +18,11 @@
 import json
 import socket
 
+# Global Variables defined
+SYNDICATE_NUMBER = 10
+COMMAND = 'DEL' # 'ADD', 'DEL', 'TEST'
+SYNDICATE_NAME = 'pyflake'
+
 
 def send_to_server(js):
     """Open socket and send the json string js to server with EOM appended, and wait
@@ -34,10 +39,31 @@ def send_to_server(js):
 
     clientsocket.close()
 
+# NOTE: call the player string from tasks.py
 
-# p = "class Player:..."
-# p2 = "class Player:..."
+#p = "class Player:..."
+#p2 = "class Player:..."
 
-# send_to_server(json.dumps({"cmd":"TEST", "syn":10, "name":"T4", "data":p, "data2":p2}))
+# reading the test.py file in as string
+with open('tasks.py', 'r') as f:
+    p = f.read()
+    #p2 = p
 
-print('Hello World')
+with open('test.py', 'r') as f:
+    p2 = f.read()
+
+# player dictionary
+if COMMAND == 'TEST':
+    p_dict = {"cmd":COMMAND, "syn":SYNDICATE_NUMBER, "name":SYNDICATE_NAME, "data":p, "data2":p2}
+else:
+    p_dict = {"cmd":COMMAND, "syn":SYNDICATE_NUMBER, "name":SYNDICATE_NAME, "data":p}
+
+#rint(p_dict)
+
+
+#send_to_server(json.dumps({"cmd":"TEST", "syn":10, "name":"T4", "data":p, "data2":p2}))
+#send_to_server(json.dumps({"cmd":"ADD", "syn":10, "name":"starflake", "data":p}))
+
+send_to_server(json.dumps(p_dict))
+
+#print(p)
