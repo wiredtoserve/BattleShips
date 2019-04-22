@@ -107,7 +107,11 @@ class Player:
         self.update_enemy_probmap(history)
 
         # updating the enemy port
-        self.enemyport = self.update_enemy_map(self.enemyport, history, self.counter)
+        previous_shots = []
+        if self.counter > 0:
+            previous_shots = history[-1]['shots']
+
+        self.enemyport = self.update_enemy_map(self.enemyport, previous_shots)
 
         # Based on some logic here, choose to shoot
         # using probability
@@ -197,11 +201,7 @@ class Player:
                 if self.enemy_probmap[row][column] == -1:
                     self.enemy_probmap[row][column] = prob
 
-    def update_enemy_map(self, enemyport, history, counter):
-        if counter == 0:
-            return enemyport
-
-        previous_shots = history[-1]['shots']
+    def update_enemy_map(self, enemyport, previous_shots):
         if previous_shots:
             for x, y in previous_shots:
                 enemyport[x][y] = 9
