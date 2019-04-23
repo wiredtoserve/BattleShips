@@ -20,50 +20,94 @@ import socket
 
 # Global Variables defined
 SYNDICATE_NUMBER = 10
-COMMAND = 'DEL' # 'ADD', 'DEL', 'TEST'
-SYNDICATE_NAME = 'pyflake'
+COMMAND = 'TEST'  # 'ADD', 'DEL', 'TEST'
+SYNDICATE_NAME = 'Iceman'  # 'Maverick', 'Goose', Iceman, 'starflake', 'Viper', 'Merlin', 'Charlie'
 
+
+# def send_to_server(js):
+#     """Open socket and send the json string js to server with EOM appended, and wait
+#        for \n terminated reply.
+#        js - json object to send to server
+#     """
+#     clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#     clientsocket.connect(('128.250.106.25', 5002))
+#     clientsocket.send("""{}EOM""".format(js).encode('utf-8'))
+#     data = ''
+#     while data == '' or data[-1] != "\n":
+#         data += clientsocket.recv(1024).decode('utf-8')
+#     print(data)
+#
+#     # Added to log the results
+#     with open('logfile', 'w') as f:
+#         f.write(data)
+#
+#     clientsocket.close()
 
 def send_to_server(js):
     """Open socket and send the json string js to server with EOM appended, and wait
        for \n terminated reply.
        js - json object to send to server
     """
-    clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    clientsocket.connect(('128.250.106.25', 5002))
-    clientsocket.send("""{}EOM""".format(js).encode('utf-8'))
-    data = ''
-    while data == '' or data[-1] != "\n":
-        data += clientsocket.recv(1024).decode('utf-8')
-    print(data)
+    try:
+        clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        clientsocket.connect(('128.250.106.25', 5002))
+        clientsocket.send("""{}EOM""".format(js).encode('utf-8'))
+        data = ''
+        while data == '' or data[-1] != "\n":
+            data += clientsocket.recv(1024).decode('utf-8')
+        print(data)
 
-    clientsocket.close()
+        # Added to log the results
+        with open('logfile', 'a+') as logger:
+            logger.write(data + '\n')
 
-# NOTE: call the player string from tasks.py
+        clientsocket.close()
 
-#p = "class Player:..."
-#p2 = "class Player:..."
+    except Exception as e:
+        print("Error: ", e)
+        # Added to log the results
+        # with open('logfile.csv', 'w') as f:
+        #     writer = csv.writer(f)
+        #     writer.writerow(str(e))
+        with open('logfile.txt', 'a+') as f:
+            f.write(str(e) + '\n')
+
 
 # reading the test.py file in as string
 with open('tasks.py', 'r') as f:
-    p = f.read()
-    #p2 = p
+    p_dummy = f.read()
+    # p2 = p
 
+# random shooting
 with open('test.py', 'r') as f:
-    p2 = f.read()
+    p_iceman = f.read()
+
+# probability included in shooting
+with open('test_charlie.py', 'r') as f:
+    p_charlie = f.read()
+
+# minesweeper functionality in shooting
+with open('test_goose.py', 'r') as f:
+    p_goose = f.read()
 
 # player dictionary
 if COMMAND == 'TEST':
-    p_dict = {"cmd":COMMAND, "syn":SYNDICATE_NUMBER, "name":SYNDICATE_NAME, "data":p, "data2":p2}
+    p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_iceman, "data2": p_charlie}
 else:
-    p_dict = {"cmd":COMMAND, "syn":SYNDICATE_NUMBER, "name":SYNDICATE_NAME, "data":p}
+    if SYNDICATE_NAME == 'Iceman':
+        p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_iceman}
+    elif SYNDICATE_NAME == 'Goose':
+        p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_goose}
+    elif SYNDICATE_NAME == 'Charlie':
+        p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_charlie}
+    elif SYNDICATE_NAME == 'starflake':
+        p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_dummy}
 
-#rint(p_dict)
+    else:
+        p_dict = None
+        print('Error while submitting, please check your input')
 
+# print(p_dict)
 
-#send_to_server(json.dumps({"cmd":"TEST", "syn":10, "name":"T4", "data":p, "data2":p2}))
-#send_to_server(json.dumps({"cmd":"ADD", "syn":10, "name":"starflake", "data":p}))
-
-send_to_server(json.dumps(p_dict))
-
-#print(p)
+if p_dict:
+    send_to_server(json.dumps(p_dict))
