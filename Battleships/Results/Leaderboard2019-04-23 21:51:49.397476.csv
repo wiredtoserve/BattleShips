@@ -1,0 +1,13 @@
+Player,Win/Loss Ratio,Wins,Losses,Draws
+test (5),3.96,103,26,4
+Goose (10),2.97,95,32,6
+NewWorld (8),2.21,73,33,27
+Aldi (8),1.36,61,45,27
+Coles (8),1.26,63,50,19
+Woolie_V1 (8),1.22,61,50,23
+Cheapestgroceryprices (8),1.17,63,54,15
+Bulbasaur (4),0.61,43,70,19
+Iceman (10),0.60,42,70,20
+baseline (7),0.38,31,81,20
+Carlos (1),0.34,30,88,17
+Gordon loves TWICE (9),0.00,0,66,67
