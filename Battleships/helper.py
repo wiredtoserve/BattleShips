@@ -1,6 +1,48 @@
 # Helper File to house all the additional functions
+'''
+
+Defense
+Random Placement of ships:
+Iceman, Goose, Charlie
+
+Optimal Placement of ships:
+Merlin, Viper*
+
+Attack:
+Probability - Charlie, Merlin
+Probability 2.0 - Viper*
+Minesweeper - Iceman
+Weighted_Minesweeper - Goose
+
+TODO: If Merlin looses less, update Goose to Optimal Placement
+
+'''
 
 import random
+
+
+class Ball:
+    def __init__(self, name, radius):
+        self.name = 'Mehul'
+        assert (type(name) == str)
+        assert (type(radius) == int)
+
+    def __repr__(self): return self.name
+
+
+b = Ball('Mike', 30)
+
+
+# print(b) # prints the __repr__ return
+
+# count ships
+# random shot
+# probability of hits
+# updating the hit matrix
+
+
+# variables: myport, enenmy port
+# def shot, move, update_myport, update_enemyport
 
 def random_shots(num=5):
     for x in range(0, num):

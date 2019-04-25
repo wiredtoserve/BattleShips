@@ -21,7 +21,7 @@ import socket
 # Global Variables defined
 SYNDICATE_NUMBER = 10
 COMMAND = 'TEST'  # 'ADD', 'DEL', 'TEST'
-SYNDICATE_NAME = 'Iceman'  # 'Maverick', 'Goose', Iceman, 'starflake', 'Viper', 'Merlin', 'Charlie'
+SYNDICATE_NAME = 'Viper'  # 'Maverick', 'Goose', Iceman, 'starflake', 'Viper', 'Merlin', 'Charlie'
 
 
 # def send_to_server(js):
@@ -58,7 +58,7 @@ def send_to_server(js):
         print(data)
 
         # Added to log the results
-        with open('logfile', 'a+') as logger:
+        with open('logfile.txt', 'a+') as logger:
             logger.write(data + '\n')
 
         clientsocket.close()
@@ -80,7 +80,7 @@ with open('tasks.py', 'r') as f:
 
 # random shooting
 with open('test.py', 'r') as f:
-    p_iceman = f.read()
+    p_iceman1 = f.read()
 
 # probability included in shooting
 with open('test_charlie.py', 'r') as f:
@@ -90,9 +90,18 @@ with open('test_charlie.py', 'r') as f:
 with open('test_goose.py', 'r') as f:
     p_goose = f.read()
 
+with open('test_iceman.py', 'r') as f:
+    p_iceman = f.read()
+
+with open('test_merlin.py', 'r') as f:
+    p_merlin = f.read()
+
+with open('test_viper.py', 'r') as f:
+    p_viper = f.read()
+
 # player dictionary
 if COMMAND == 'TEST':
-    p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_iceman, "data2": p_charlie}
+    p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_charlie, "data2": p_viper}
 else:
     if SYNDICATE_NAME == 'Iceman':
         p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_iceman}
@@ -100,6 +109,10 @@ else:
         p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_goose}
     elif SYNDICATE_NAME == 'Charlie':
         p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_charlie}
+    elif SYNDICATE_NAME == 'Merlin':
+        p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_merlin}
+    elif SYNDICATE_NAME == 'Viper':
+        p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_viper}
     elif SYNDICATE_NAME == 'starflake':
         p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_dummy}
 
