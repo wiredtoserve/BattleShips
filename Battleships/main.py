@@ -21,7 +21,7 @@ import socket
 # Global Variables defined
 SYNDICATE_NUMBER = 10
 COMMAND = 'TEST'  # 'ADD', 'DEL', 'TEST'
-SYNDICATE_NAME = 'Viper'  # 'Maverick', 'Goose', Iceman, 'starflake', 'Viper', 'Merlin', 'Charlie'
+SYNDICATE_NAME = 'Merlin'  # 'Maverick', 'Goose', Iceman, 'starflake', 'Viper', 'Merlin', 'Charlie'
 
 
 # def send_to_server(js):
@@ -99,21 +99,61 @@ with open('test_merlin.py', 'r') as f:
 with open('test_viper.py', 'r') as f:
     p_viper = f.read()
 
+# Added for final submission
+with open('/Users/mehulnagpurkar/JupyterNotebook/MBusA19/Module 2/Battleships/Submission/merlin.py', 'r') as f:
+    final_merlin = f.read()
+
+with open('/Users/mehulnagpurkar/JupyterNotebook/MBusA19/Module 2/Battleships/Submission/charlie.py', 'r') as f:
+    final_charlie = f.read()
+
+with open('/Users/mehulnagpurkar/JupyterNotebook/MBusA19/Module 2/Battleships/Submission/Final/Final_Maverick.py',
+          'r') as f:
+    submit_maverick = f.read()
+
+with open('/Users/mehulnagpurkar/JupyterNotebook/MBusA19/Module 2/Battleships/Submission/Final/Final_Charlie.py',
+          'r') as f:
+    submit_charlie = f.read()
+
+with open('/Users/mehulnagpurkar/JupyterNotebook/MBusA19/Module 2/Battleships/Submission/Final/Final_Goose.py',
+          'r') as f:
+    submit_goose = f.read()
+
+with open('/Users/mehulnagpurkar/JupyterNotebook/MBusA19/Module 2/Battleships/Submission/Final/Final_Iceman.py',
+          'r') as f:
+    submit_iceman = f.read()
+
+with open('/Users/mehulnagpurkar/JupyterNotebook/MBusA19/Module 2/Battleships/Submission/Final/Final_Thunderdome.py',
+          'r') as f:
+    submit_wolfman = f.read()
+
+with open('/Users/mehulnagpurkar/JupyterNotebook/MBusA19/Module 2/Battleships/Submission/Final/Final_Merlin.py',
+          'r') as f:
+    submit_merlin = f.read()
+
 # player dictionary
 if COMMAND == 'TEST':
-    p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_charlie, "data2": p_viper}
+    p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": submit_maverick,
+              "data2": final_charlie}
 else:
     if SYNDICATE_NAME == 'Iceman':
-        p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_iceman}
+        # p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_iceman}
+        p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": submit_iceman}
     elif SYNDICATE_NAME == 'Goose':
-        p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_goose}
+        # p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_goose}
+        p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": submit_goose}
     elif SYNDICATE_NAME == 'Charlie':
-        p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_charlie}
+        # p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_charlie}
+        p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": submit_charlie}
     elif SYNDICATE_NAME == 'Merlin':
-        p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_merlin}
+        # p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_merlin}
+        p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": submit_merlin}
     elif SYNDICATE_NAME == 'Viper':
         p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_viper}
-    elif SYNDICATE_NAME == 'starflake':
+    elif SYNDICATE_NAME == 'Maverick':
+        p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": submit_maverick}
+    elif SYNDICATE_NAME == 'Wolfman':
+        p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": submit_wolfman}
+    elif SYNDICATE_NAME == 'Ref':
         p_dict = {"cmd": COMMAND, "syn": SYNDICATE_NUMBER, "name": SYNDICATE_NAME, "data": p_dummy}
 
     else:

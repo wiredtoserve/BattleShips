@@ -1,0 +1,564 @@
+ERR: couldn't run game for TEST: b'Player 0 failed: Traceback (most recent call last):\n  File "/home/aturpin/Site/game.py", line 212, in run_game\n    ss = Game.timeout(player[p_give].take_turn, [histories[p_give]])\n  File "/home/aturpin/Site/game.py", line 56, in timeout\n    raise e\n  File "/home/aturpin/Site/game.py", line 52, in timeout\n    return func(*args, **kwargs)\n  File "<string>", line 107, in take_turn\n  File "<string>", line 172, in update_enemy_probmap\nZeroDivisionError: division by zero\n' Traceback (most recent call last):
+  File "sandpit.py", line 72, in do_test
+    raise Exception("Player {} failed: {}".format(result[0], result[1]).encode('utf-8'))
+Exception: b'Player 0 failed: Traceback (most recent call last):\n  File "/home/aturpin/Site/game.py", line 212, in run_game\n    ss = Game.timeout(player[p_give].take_turn, [histories[p_give]])\n  File "/home/aturpin/Site/game.py", line 56, in timeout\n    raise e\n  File "/home/aturpin/Site/game.py", line 52, in timeout\n    return func(*args, **kwargs)\n  File "<string>", line 107, in take_turn\n  File "<string>", line 172, in update_enemy_probmap\nZeroDivisionError: division by zero\n'
+
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+ERR: couldn't run game for TEST: b'Player 0 failed: Player Syndicate_10 setup timed out' Traceback (most recent call last):
+  File "sandpit.py", line 72, in do_test
+    raise Exception("Player {} failed: {}".format(result[0], result[1]).encode('utf-8'))
+Exception: b'Player 0 failed: Player Syndicate_10 setup timed out'
+
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+ERR: couldn't run game for TEST: b'Player 0 failed: Traceback (most recent call last):\n  File "/home/aturpin/Site/game.py", line 212, in run_game\n    ss = Game.timeout(player[p_give].take_turn, [histories[p_give]])\n  File "/home/aturpin/Site/game.py", line 56, in timeout\n    raise e\n  File "/home/aturpin/Site/game.py", line 52, in timeout\n    return func(*args, **kwargs)\n  File "<string>", line 107, in take_turn\n  File "<string>", line 172, in update_enemy_probmap\nZeroDivisionError: division by zero\n' Traceback (most recent call last):
+  File "sandpit.py", line 72, in do_test
+    raise Exception("Player {} failed: {}".format(result[0], result[1]).encode('utf-8'))
+Exception: b'Player 0 failed: Traceback (most recent call last):\n  File "/home/aturpin/Site/game.py", line 212, in run_game\n    ss = Game.timeout(player[p_give].take_turn, [histories[p_give]])\n  File "/home/aturpin/Site/game.py", line 56, in timeout\n    raise e\n  File "/home/aturpin/Site/game.py", line 52, in timeout\n    return func(*args, **kwargs)\n  File "<string>", line 107, in take_turn\n  File "<string>", line 172, in update_enemy_probmap\nZeroDivisionError: division by zero\n'
+
+
+SUCCESS: 1 wins
+
+ERR: couldn't run game for TEST: b'Player 0 failed: Player Syndicate_10 setup timed out' Traceback (most recent call last):
+  File "sandpit.py", line 72, in do_test
+    raise Exception("Player {} failed: {}".format(result[0], result[1]).encode('utf-8'))
+Exception: b'Player 0 failed: Player Syndicate_10 setup timed out'
+
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+ERR: couldn't run game for TEST: b'Player 1 failed: Player Syndicate_10 setup timed out' Traceback (most recent call last):
+  File "sandpit.py", line 72, in do_test
+    raise Exception("Player {} failed: {}".format(result[0], result[1]).encode('utf-8'))
+Exception: b'Player 1 failed: Player Syndicate_10 setup timed out'
+
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+ERR: couldn't run game for TEST: b'Player 1 failed: Player Syndicate_10 setup timed out' Traceback (most recent call last):
+  File "sandpit.py", line 72, in do_test
+    raise Exception("Player {} failed: {}".format(result[0], result[1]).encode('utf-8'))
+Exception: b'Player 1 failed: Player Syndicate_10 setup timed out'
+
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS
+
+SUCCESS
+
+SUCCESS: 0 wins
+
+SUCCESS
+
+ERR: name Maverick doesn't exist
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS
+
+SUCCESS
+
+SUCCESS
+
+SUCCESS
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 0 wins
+
+SUCCESS: 1 wins
+
+SUCCESS
+
+SUCCESS
+
+SUCCESS
+
+SUCCESS
+
+SUCCESS
+
+SUCCESS
+
+SUCCESS
+
+SUCCESS
+
+SUCCESS
+
+SUCCESS: 0 wins
+
+SUCCESS
+
+SUCCESS: 0 wins
+
